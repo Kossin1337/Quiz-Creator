@@ -1,0 +1,38 @@
+.navigation-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .navigation {
+    width: 80%;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      font-size: 1.75rem;
+    }
+
+    .log-in-btn {
+      cursor: pointer;
+      background-color: #70def1;
+      color: #000;
+      border: none;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+    }
+
+    .log-in-btn:hover {
+      background-color: #50bcd0;
+      color: #fefefe;
+    }
+
+    .log-in-btn:active {
+      outline: none;
+    }
+  }
+}
