@@ -10,6 +10,12 @@ export const AddQuiz = () => {
     quizQues: []
   });
 
+  // quizQues: [
+  //   { questionText: "", 
+  //     answerOptions: ["option 1", "Option 2", "Option 3", "Option 4"]
+  //   }
+  // ]
+
   async function addData(e) {
     e.preventDefault();
     const ref = firebase.firestore().collection('quiz').doc(quizUrl);
