@@ -7,6 +7,8 @@ import "./App.scss";
 import { Navigation } from "./components/Navigation/Navigation";
 import { QuizCreator } from "./components/QuizCreator/QuizCreator";
 import Login from "./components/Login";
+import { Quiz } from "./components/Quiz";
+import { AddQuiz } from "./components/AddQuiz";
 
 
 
@@ -37,6 +39,11 @@ const App = () => {
           </Route>
           <Route exact path="/quiz">
             <h1>Quiz Page</h1>
+            <Quiz />
+          </Route>
+          <Route exact path="/add">
+            <h1>Add Quiz</h1>
+            <AddQuiz />
           </Route>
         </Switch>
       </Router>
