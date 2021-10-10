@@ -8,11 +8,8 @@ import { Navigation } from "./components/Navigation/Navigation";
 import { QuizCreator } from "./components/QuizCreator/QuizCreator";
 import Login from "./components/Login";
 
-
-
 let UserContext = React.createContext();
 const App = () => {
-  
   const [user, setUser] = useState();
 
   useEffect(function () {
