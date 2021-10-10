@@ -1,0 +1,23 @@
+.quiz-creator-wrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .quiz-creator {
+    width: 80%;
+    padding-top: 2rem;
+
+    .quiz-list {
+      margin-top: 2rem;
+      width: 100%;
+      height: 500px;
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #343434;
+
+      .quiz-container {
+      }
+    }
+  }
+}

@@ -35,7 +35,7 @@ export const Navigation = () => {
             <NavLink to="/add">Quiz Creator</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/quiz">Explore</NavLink>
+            <NavLink to="/quiz">Explore Quizzes</NavLink>
           </li>
         </ul>
         {user && (
