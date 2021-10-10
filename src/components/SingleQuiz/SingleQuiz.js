@@ -51,6 +51,16 @@ export const SingleQuiz = () => {
         <h2 className="question-number-indicator">
           Question {questionIndex + 1} of {data.numberOfQues}
         </h2>
+        <p>{data.quizQues && data.quizQues[questionIndex].questionText}</p>
+        <ul className="answers">
+              {data.quizQues && data.quizQues[questionIndex].answerOptions.map(
+                (option, index) => (
+                  <li className="answer" key={index}>
+                    {option}
+                  </li>
+                )
+              )}
+            </ul>
         {/* <div className="quiz-content">
           <div className="quiz-question">
             <h2>{data.quizQues[questionIndex].questionText}</h2>
