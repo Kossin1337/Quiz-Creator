@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import firebase from "../../utils/firebase";
 
+import { SingleQuizQuestion } from "./SingleQuizQuestion";
+
 import "./style.scss";
 
 export const SingleQuiz = () => {
@@ -29,7 +31,6 @@ export const SingleQuiz = () => {
     return <h1>Loading ...</h1>;
   }
 
-  console.log(`Single quiz data`);
   console.log(data);
 
   function prevQuestion() {
@@ -51,20 +52,12 @@ export const SingleQuiz = () => {
         <h2 className="question-number-indicator">
           Question {questionIndex + 1} of {data.numberOfQues}
         </h2>
-        {/* <div className="quiz-content">
-          <div className="quiz-question">
-            <h2>{data.quizQues[questionIndex].questionText}</h2>
-            <ul className="answers">
-              {data.quizQues[questionIndex].answerOptions.map(
-                (option, index) => (
-                  <li className="answer" key={index}>
-                    {option}
-                  </li>
-                )
-              )}
-            </ul>
-          </div>
-        </div> */}
+        {data && (
+          <SingleQuizQuestion
+            questionIndex={questionIndex}
+            questionData={data.quizQues}
+          />
+        )}
         {questionIndex === data.numberOfQues - 1 ? (
           <button className="submit-btn">Submit</button>
         ) : (
