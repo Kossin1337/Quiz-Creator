@@ -8,8 +8,8 @@ import "./AddQuiz.scss";
 export const AddQuiz = () => {
   const [quizUrl, setQuizUrl] = useState("");
   const [questions, setQuestions] = useState([
-    { id: uuid(), ques: '', options: ["", ""], correctAns: "" },
-    { id: uuid(), ques: '', options: [], correctAns: "" },
+    { id: uuid(), ques: '', options: ["", "", "", ""], correctAns: "" },
+    { id: uuid(), ques: '', options: ["", "", "", ""], correctAns: "" },
   ]);
 
   const [newQuiz, setNewQuiz] = useState({
@@ -23,7 +23,7 @@ export const AddQuiz = () => {
 
   const handleAddQuestion = () => {
     let noOfQues = questions.length + 1;
-    setQuestions([...questions, { noOfQues: { id: uuid(), ques: '', options: [], correctAns: "" } }])
+    setQuestions([...questions, { id: uuid(), ques: '', options: ["", "", "", ""], correctAns: "" }])
   }
 
   async function addData(e) {
@@ -66,18 +66,19 @@ export const AddQuiz = () => {
               Question {i + 1}
             </h3>
             <label>Question</label>
-            <input type="text" placeholder="Question" value={ques[i].ques} onChange={(e) => setQuestions(...questions)} />
+            <input type="text" placeholder="Question" />
             <div className="options">
               <ul>
-                {ques[i].options.length > 0 && ques[i].options.map((quesOptions, i) => (
-                <li key={i}>
+                {ques.options.length > 0 && ques.options.map((quesOptions, i) => (
+                  <li key={i}>
                   {/* <input type="text" placeholder={`Option ${i + 1}`} onChange={e => handleChangeInput(quesOptions.id, e)} /> */}
                   <input type="text" placeholder={`Option ${i + 1}`} />
                 </li>
               ))}
-                <button type="button" onClick={() => handleAddOptions(i)}>Add Option</button>
+                {/* <button type="button" onClick={() => handleAddOptions(i)}>Add Option</button> */}
               </ul>
             </div>
+            <input type="text" placeholder="Correct Answer" />
           </div>
         ))}
 

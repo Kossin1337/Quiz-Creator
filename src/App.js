@@ -52,11 +52,11 @@ const App = () => {
               <UserProfile />
             </AuthGaurd>
           </Route>
-          {/* <Route exact path="/add">
+          <Route exact path="/add">
             <AuthGaurd>
               <AddQuiz />
             </AuthGaurd>
-          </Route> */}
+          </Route>
         </Switch>
       </Router>
     </UserContext.Provider>
