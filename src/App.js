@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.scss";
 
 import { Navigation } from "./components/Navigation/Navigation";
-import { QuizCreator } from "./components/QuizCreator/QuizCreator";
 import { LandingPage } from "./components/LandingPage/LandingPage";
 import Login from "./components/Login";
 import { Quiz } from "./components/Quiz/Quiz";
@@ -44,11 +43,6 @@ const App = () => {
           <Route exact path="/quiz/:quizid">
             <AuthGaurd>
               <SingleQuiz />
-            </AuthGaurd>
-          </Route>
-          <Route exact path="/createquiz">
-            <AuthGaurd>
-              <QuizCreator />
             </AuthGaurd>
           </Route>
           <Route exact path="/add">
