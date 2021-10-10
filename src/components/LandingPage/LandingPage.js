@@ -1,24 +1,19 @@
 import React from "react";
+import "./LandingPage.scss";
+import heroGif from "./hero.gif";
 
 export const LandingPage = () => {
-  return <div className="langing-page"></div>;
+  return (
+    <div className="langing-page-wrapper">
+      <div className="landing-page">
+        <img src={heroGif} alt="Landing page gif" />
+        <div className="text-container">
+          <h2 className="main-text">Create your own Quizzez</h2>
+          <h3 className="sub-text">
+            Effective way to learn and compete with your friends
+          </h3>
+        </div>
+      </div>
+    </div>
+  );
 };
-
-// {
-//   quizID: 'xd1ars',
-//   title: 'quiz title',
-//   questions: [
-//     {
-//       id: 1,
-//       questionTitle: "Four (4) in Spanish is:",
-//       answers: ['Uno', 'Dos', 'tres', 'cuatro'],
-//       correctAnswerID: 3
-//     }
-//     {
-//       id: 2,
-//       questionTitle: "Two (2) in Spanish is:",
-//       answers: ['Uno', 'Dos', 'tres', 'cuatro'],
-//       correctAnswerID: 1
-//     }
-//   ]
-// }

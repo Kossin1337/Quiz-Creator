@@ -15,7 +15,7 @@ export const Navigation = () => {
   return (
     <div className="navigation-wrapper">
       <div className="navigation">
-        <h2 className="logo">Quiz Creator</h2>
+        <h2 className="logo">QuizZotopia</h2>
         {!user && (
           <button
             className="nav-btn log-in-btn"
