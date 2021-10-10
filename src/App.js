@@ -10,6 +10,8 @@ import { LandingPage } from "./components/LandingPage/LandingPage";
 import Login from "./components/Login";
 import { Quiz } from "./components/Quiz/Quiz";
 import { AddQuiz } from "./components/AddQuiz/AddQuiz";
+import { SingleQuiz } from "./components/SingleQuiz/SingleQuiz";
+import AuthGaurd from "./utils/AuthGaurd";
 
 let UserContext = React.createContext();
 const App = () => {
@@ -35,11 +37,19 @@ const App = () => {
             <Login />
           </Route>
           <Route exact path="/quiz">
-            <h1>Quiz Page</h1>
-            <Quiz />
+            <AuthGaurd>
+              <Quiz />
+            </AuthGaurd>
+          </Route>
+          <Route exact path="/quiz/:quizid">
+            <AuthGaurd>
+              <SingleQuiz />
+            </AuthGaurd>
           </Route>
           <Route exact path="/createquiz">
-            <QuizCreator />
+            <AuthGaurd>
+              <QuizCreator />
+            </AuthGaurd>
           </Route>
           <Route exact path="/add">
             <AddQuiz />

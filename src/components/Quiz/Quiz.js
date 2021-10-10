@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router";
 import firebase from "../../utils/firebase";
 
+import "./style.scss";
 export const Quiz = () => {
   const [quiz, setQuiz] = useState([]);
   const [loading, setLoading] = useState(false);
+  const history = useHistory();
 
   const ref = firebase.firestore().collection("quiz");
 
-  console.log(ref);
 
   function getQues() {
     setLoading(true);
     ref.onSnapshot((querySnapshot) => {
       const items = [];
       querySnapshot.forEach((doc) => {
-        items.push(doc.data());
+        items.push({data: doc.data(), id: doc.id});
       });
       setQuiz(items);
       setLoading(false);
@@ -26,28 +28,20 @@ export const Quiz = () => {
     // eslint-disable-next-line
   }, []);
 
+  const handleClick = (id) => {
+    history.push(`/quiz/${id}`)
+  }
+
   if (loading) {
     return <h1>Loading ...</h1>;
   }
 
   return (
     <div className="quiz-creator">
-      {quiz.map((ques) => (
-        <>
-          <h1>Quiz Name - {ques.quizName}</h1>
-          <div>
-            {ques.quizQues.map((item) => (
-              <div>
-                <h2>{item.questionText}</h2>
-                <ul>
-                  {item.answerOptions.map((option) => (
-                    <li>{option}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </>
+      {quiz.map((ques, i) => (
+        <div className="quiz-name" key={i} onClick={() => handleClick(ques.id)}>
+          <h1>{ques.data.quizName}</h1>
+        </div>
       ))}
     </div>
   );

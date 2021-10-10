@@ -1,0 +1,19 @@
+.quiz-creator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  min-height: 80vh;
+  gap: 75px;
+  .quiz-name {
+    padding: 75px;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    border-radius: 25px;
+    &:hover {
+      padding: 100px;
+      transition: all 0.4s ease;
+    }
+  }
+}

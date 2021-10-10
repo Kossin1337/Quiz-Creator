@@ -11,7 +11,6 @@ export const Navigation = () => {
   let { user } = useContext(UserContext);
   const history = useHistory();
 
-  console.log(user);
 
   return (
     <div className="navigation-wrapper">
@@ -34,7 +33,7 @@ export const Navigation = () => {
               {/* {user.email && <h3>{user.email}</h3>} */}
               {user.displayName && (
                 <p className="user-name">
-                  <i class="fas fa-user"></i>
+                  <i className="fas fa-user"></i>
                   {user.displayName}
                 </p>
               )}

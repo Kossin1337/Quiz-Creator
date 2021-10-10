@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import firebase from "../../utils/firebase";
 
 import "./AddQuiz.scss";
+import { Question } from "./Question";
 
 export const AddQuiz = () => {
   const [quizUrl, setQuizUrl] = useState("");
@@ -23,7 +24,7 @@ export const AddQuiz = () => {
     const ref = firebase.firestore().collection("quiz").doc(quizUrl);
     const res = await ref.set(newQuiz);
 
-    console.log(res);
+    // console.log(res);
   }
 
   return (
@@ -48,14 +49,13 @@ export const AddQuiz = () => {
           Question {questions.length + 1}
         </h3>
 
-        <label>Question Heading</label>
-        <input type="text" />
+        <Question />
 
         <div className="form-buttons">
-          <button className="quiz-btn add-question-btn" type="submit">
-            New question <i class="fas fa-plus-square"></i>
+          <button className="quiz-btn add-question-btn" type="button">
+            New question <i className="fas fa-plus-square"></i>
           </button>
-          <button className="quiz-btn create-quiz-btn">Submit</button>
+          <button className="quiz-btn create-quiz-btn" type="submit">Submit</button>
         </div>
       </form>
     </div>
