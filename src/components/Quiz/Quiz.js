@@ -41,10 +41,15 @@ export const Quiz = () => {
         <h2>Explore the quizzes</h2>
         <div className="quiz-list">
           {quiz.map((ques, i) => (
-            <div className="quiz-container"></div>
-            // <div className="quiz-name" key={i} onClick={() => handleClick(ques.id)}>
-            //   <h1>{ques.data.quizName}</h1>
-            // </div>
+            <div className="quiz-container">
+              <div
+                className="quiz-name"
+                key={i}
+                onClick={() => handleClick(ques.id)}
+              >
+                <p>{ques.data.quizName}</p>
+              </div>
+            </div>
           ))}
         </div>
       </div>

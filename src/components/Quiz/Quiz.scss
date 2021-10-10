@@ -14,9 +14,34 @@
       height: 500px;
       display: flex;
       flex-wrap: wrap;
-      background-color: #343434;
+      flex: 1 1 auto;
 
       .quiz-container {
+        cursor: pointer;
+        height: 200px;
+        text-align: center;
+        background-color: #000;
+        border: 2px solid #343434;
+        border-radius: 25px;
+        margin-left: 2rem;
+        padding: 1rem;
+        transition: all 0.15s ease;
+
+        .quiz-name {
+          font-size: 1.75rem;
+          font-weight: 600;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          margin: 0 1rem 1.5rem 1rem;
+        }
+      }
+
+      .quiz-container:first-child {
+        margin: 0;
+      }
+
+      .quiz-container:hover {
+        background-color: #232323;
       }
     }
   }
