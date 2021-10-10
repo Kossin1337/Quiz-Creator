@@ -52,7 +52,7 @@ export const SingleQuiz = () => {
         <h2 className="question-number-indicator">
           Question {questionIndex + 1} of {data.numberOfQues}
         </h2>
-        {data && (
+        {!loading && (
           <SingleQuizQuestion
             questionIndex={questionIndex}
             questionData={data.quizQues}
