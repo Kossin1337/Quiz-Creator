@@ -52,7 +52,9 @@ const App = () => {
             </AuthGaurd>
           </Route>
           <Route exact path="/add">
-            <AddQuiz />
+            <AuthGaurd>
+              <AddQuiz />
+            </AuthGaurd>
           </Route>
         </Switch>
       </Router>
