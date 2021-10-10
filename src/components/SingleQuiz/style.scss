@@ -1,17 +1,27 @@
 .single-quiz {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 75px;
+  width: 100%;
   min-height: 80vh;
+  display: flex;
+  justify-content: center;
+
   .quiz-section {
+    width: 80%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    gap: 30px;
 
-    button {
+    .quiz-title {
+      margin: 1rem 0;
+    }
+
+    .question-number-indicator {
+      font-size: 1.25rem;
+      color: #aaa;
+    }
+
+    .submit-btn {
+      cursor: pointer;
       outline: none;
       border: none;
       padding: 15px 50px;
@@ -24,31 +34,62 @@
       }
     }
 
-    .quiz-question {
-      margin-bottom: 25px;
+    .quiz-content {
+      display: flex;
+    }
 
-      h2 {
-        margin-bottom: 10px;
-      }
-      ul {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 10px;
-        li {
-          list-style: none;
-          padding: 15px;
-          border: solid 2px #fff;
-          border-radius: 15px;
-          cursor: pointer;
-          &:hover {
-            background-color: #fff;
-            color: #000;
-            transition: all 0.2s ease;
-          }
+    .buttons {
+      display: flex;
+
+      .navigation-btn {
+        cursor: pointer;
+        font-size: 1.2rem;
+        height: 40px;
+        width: 40px;
+        padding: 0.5rem;
+        border: none;
+        outline: none;
+        border-radius: 25px;
+        transition: all 0.15s ease;
+
+        &:hover {
+          background-color: rgb(19, 76, 233);
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        &:last-child {
+          margin-left: 1rem;
         }
       }
     }
-    
+
+    // .quiz-question {
+    //   margin-bottom: 25px;
+
+    //   h2 {
+    //     margin-bottom: 10px;
+    //   }
+    //   ul {
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: flex-start;
+    //     gap: 10px;
+    //     li {
+    //       list-style: none;
+    //       padding: 15px;
+    //       border: solid 2px #fff;
+    //       border-radius: 15px;
+    //       cursor: pointer;
+    //       &:hover {
+    //         background-color: #fff;
+    //         color: #000;
+    //         transition: all 0.2s ease;
+    //       }
+    //     }
+    //   }
+    // }
   }
 }
