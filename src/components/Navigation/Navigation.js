@@ -17,14 +17,6 @@ export const Navigation = () => {
         <Link to="/">
           <h2 className="logo">QuizZotopia</h2>
         </Link>
-        {!user && (
-          <button
-            className="nav-btn log-in-btn"
-            onClick={() => history.push("/login")}
-          >
-            Login
-          </button>
-        )}
         <ul className="nav-menu">
           <li className="nav-item">
             <NavLink exact to="/">
@@ -57,6 +49,14 @@ export const Navigation = () => {
               </button>
             </div>
           </>
+        )}
+        {!user && (
+          <button
+            className="nav-btn log-in-btn"
+            onClick={() => history.push("/login")}
+          >
+            Login
+          </button>
         )}
       </div>
     </div>
