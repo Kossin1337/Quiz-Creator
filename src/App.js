@@ -8,10 +8,12 @@ import { Navigation } from "./components/Navigation/Navigation";
 import { QuizCreator } from "./components/QuizCreator/QuizCreator";
 import { LandingPage } from "./components/LandingPage/LandingPage";
 import Login from "./components/Login";
+import { Quiz } from "./components/Quiz/Quiz";
+import { AddQuiz } from "./components/AddQuiz/AddQuiz";
 
 let UserContext = React.createContext();
 const App = () => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState();
 
   useEffect(function () {
     firebase.auth().onAuthStateChanged(function (userInfo) {
@@ -30,11 +32,17 @@ const App = () => {
             {/* <QuizCreator /> */}
           </Route>
           <Route path="/login">
-            <h1>Login Page</h1>
             <Login />
           </Route>
           <Route exact path="/quiz">
             <h1>Quiz Page</h1>
+            <Quiz />
+          </Route>
+          <Route exact path="/createquiz">
+            <QuizCreator />
+          </Route>
+          <Route exact path="/add">
+            <AddQuiz />
           </Route>
         </Switch>
       </Router>

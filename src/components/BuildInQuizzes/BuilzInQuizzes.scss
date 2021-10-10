@@ -1,0 +1,11 @@
+.buildin-quizzes-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .buildin-quizzes {
+    width: 80%;
+    display: flex;
+  }
+}

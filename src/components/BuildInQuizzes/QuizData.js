@@ -15,6 +15,24 @@ export const buildInQuizzes = [
         answers: ["Uno", "Dos", "tres", "cuatro"],
         correctAnswerID: 1,
       },
+      {
+        id: 3,
+        questionTitle: "Two (2) in Spanish is:",
+        answers: ["Uno", "Dos", "tres", "cuatro"],
+        correctAnswerID: 1,
+      },
+      {
+        id: 4,
+        questionTitle: "Two (2) in Spanish is:",
+        answers: ["Uno", "Dos", "tres", "cuatro"],
+        correctAnswerID: 1,
+      },
+      {
+        id: 5,
+        questionTitle: "Two (2) in Spanish is:",
+        answers: ["Uno", "Dos", "tres", "cuatro"],
+        correctAnswerID: 1,
+      },
     ],
   },
 ];

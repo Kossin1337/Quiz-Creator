@@ -1,5 +1,6 @@
 import React from "react";
 import firebase from "../../utils/firebase";
+import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 import { useContext } from "react";
 import { UserContext } from "../../App";
@@ -15,13 +16,15 @@ export const Navigation = () => {
   return (
     <div className="navigation-wrapper">
       <div className="navigation">
-        <h2 className="logo">QuizZotopia</h2>
+        <Link to="/">
+          <h2 className="logo">QuizZotopia</h2>
+        </Link>
         {!user && (
           <button
             className="nav-btn log-in-btn"
             onClick={() => history.push("/login")}
           >
-            Log In
+            Login
           </button>
         )}
         {user && (
@@ -30,7 +33,10 @@ export const Navigation = () => {
               {/* {user.photoURL && (<img src={user.photoURL} alt={user.displayName} style={{ borderRadius: "50%" }} />)} */}
               {/* {user.email && <h3>{user.email}</h3>} */}
               {user.displayName && (
-                <p className="user-name">{user.displayName}</p>
+                <p className="user-name">
+                  <i class="fas fa-user"></i>
+                  {user.displayName}
+                </p>
               )}
               <button
                 className="nav-btn log-out-btn"

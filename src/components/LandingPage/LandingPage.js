@@ -8,7 +8,7 @@ export const LandingPage = () => {
       <div className="landing-page">
         <img src={heroGif} alt="Landing page gif" />
         <div className="text-container">
-          <h2 className="main-text">Create your own Quizzez</h2>
+          <h2 className="main-text">Welcome to the quizz world</h2>
           <h3 className="sub-text">
             Effective way to learn and compete with your friends
           </h3>
