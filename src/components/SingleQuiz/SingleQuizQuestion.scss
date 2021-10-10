@@ -1,0 +1,25 @@
+.quiz-content {
+  display: flex;
+  flex-direction: column;
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+
+    li {
+      list-style: none;
+      padding: 15px;
+      border: solid 2px #fff;
+      border-radius: 15px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #fff;
+        color: #000;
+        transition: all 0.2s ease;
+      }
+    }
+  }
+}

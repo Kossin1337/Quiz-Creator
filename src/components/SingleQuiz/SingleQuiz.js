@@ -29,8 +29,6 @@ export const SingleQuiz = () => {
     return <h1>Loading ...</h1>;
   }
 
-  console.log(`Single quiz data`);
-  console.log(data);
 
   function prevQuestion() {
     if (questionIndex !== 0) {
@@ -51,30 +49,38 @@ export const SingleQuiz = () => {
         <h2 className="question-number-indicator">
           Question {questionIndex + 1} of {data.numberOfQues}
         </h2>
-        <p>{data.quizQues && data.quizQues[questionIndex].questionText}</p>
-        <ul className="answers">
-              {data.quizQues && data.quizQues[questionIndex].answerOptions.map(
-                (option, index) => (
-                  <li className="answer" key={index}>
-                    {option}
-                  </li>
-                )
-              )}
-            </ul>
-        {/* <div className="quiz-content">
-          <div className="quiz-question">
-            <h2>{data.quizQues[questionIndex].questionText}</h2>
-            <ul className="answers">
-              {data.quizQues[questionIndex].answerOptions.map(
-                (option, index) => (
-                  <li className="answer" key={index}>
-                    {option}
-                  </li>
-                )
-              )}
-            </ul>
+        {!loading && (
+          <div className="single-quiz">
+
+            <div className="quiz-section" >
+              <div>
+                {/* {data.quizQues && data.quizQues.map((item, i) => (
+                  <div className="quiz-question" key={i}>
+                    <h2>{item.questionText}</h2>
+                    <ul>
+                      {item.answerOptions.map((option, index) => (
+                        <li key={index} >{option}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))} */}
+
+                {data.quizQues && (
+                  <div className="quiz-question">
+                    <h2>{data.quizQues[questionIndex].questionText}</h2>
+                    <ul>
+                      {data.quizQues[questionIndex].answerOptions.map((option, index) => (
+                        <li key={index} >{option}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </div>
+
           </div>
-        </div> */}
+        )}
+
         {questionIndex === data.numberOfQues - 1 ? (
           <button className="submit-btn">Submit</button>
         ) : (
@@ -97,15 +103,3 @@ export const SingleQuiz = () => {
     </div>
   );
 };
-
-/* {data.quizQues &&
-            data.quizQues.map((item, i) => (
-              <div className="quiz-question" key={i}>
-                <h2>{item.questionText}</h2>
-                <ul>
-                  {item.answerOptions.map((option, index) => (
-                    <li key={index}>{option}</li>
-                  ))}
-                </ul>
-              </div>
-            ))} */
