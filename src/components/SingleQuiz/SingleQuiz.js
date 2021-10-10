@@ -122,7 +122,7 @@ export const SingleQuiz = () => {
         )}
 
         <div className="buttons">
-          {questionIndex !== 0 && <button
+          {/* {questionIndex !== 0 && <button
             className="navigation-btn last-question"
             onClick={prevQuestion}
           >
@@ -133,7 +133,7 @@ export const SingleQuiz = () => {
             onClick={nextQuestion}
           >
             <i class="fas fa-angle-right"></i>
-          </button>}
+          </button>} */}
         </div>
         {/* {questionIndex === data.numberOfQues - 1 && (
           <button className="submit-btn">Submit</button>
