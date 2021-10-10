@@ -36,7 +36,7 @@ export const Navigation = () => {
               {/* {user.photoURL && (<img src={user.photoURL} alt={user.displayName} style={{ borderRadius: "50%" }} />)} */}
               {/* {user.email && <h3>{user.email}</h3>} */}
               {user.displayName && (
-                <p className="user-name">
+                <p className="user-name link" onClick={() => history.push("/profile")}>
                   <i className="fas fa-user"></i>
                   {user.displayName}
                 </p>

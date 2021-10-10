@@ -28,6 +28,9 @@
 
       .user-name {
         margin-right: 1rem;
+        &.link {
+          cursor: pointer;
+        }
 
         i {
           margin-right: 0.5rem;

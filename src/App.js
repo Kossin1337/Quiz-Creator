@@ -11,6 +11,8 @@ import { Quiz } from "./components/Quiz/Quiz";
 import { AddQuiz } from "./components/AddQuiz/AddQuiz";
 import { SingleQuiz } from "./components/SingleQuiz/SingleQuiz";
 import AuthGaurd from "./utils/AuthGaurd";
+import { Questions } from "./components/AddQuiz/Question";
+import { UserProfile } from "./components/UserProfile/UserProfile";
 
 let UserContext = React.createContext();
 const App = () => {
@@ -45,11 +47,16 @@ const App = () => {
               <SingleQuiz />
             </AuthGaurd>
           </Route>
-          <Route exact path="/add">
+          <Route exact path="/profile">
+            <AuthGaurd>
+              <UserProfile />
+            </AuthGaurd>
+          </Route>
+          {/* <Route exact path="/add">
             <AuthGaurd>
               <AddQuiz />
             </AuthGaurd>
-          </Route>
+          </Route> */}
         </Switch>
       </Router>
     </UserContext.Provider>

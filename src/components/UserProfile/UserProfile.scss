@@ -1,0 +1,23 @@
+.user-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  .user-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+
+    button {
+      padding: 15px 30px;
+      outline: none;
+      border: none;
+      background-color: #e9322b;
+      border-radius: 15px;
+      color: #fff;
+    }
+    
+  }
+}
