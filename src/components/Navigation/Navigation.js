@@ -1,6 +1,6 @@
 import React from "react";
 import firebase from "../../utils/firebase";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useHistory } from "react-router";
 import { useContext } from "react";
 import { UserContext } from "../../App";
@@ -10,7 +10,6 @@ import "./Navigation.scss";
 export const Navigation = () => {
   let { user } = useContext(UserContext);
   const history = useHistory();
-
 
   return (
     <div className="navigation-wrapper">
@@ -26,6 +25,19 @@ export const Navigation = () => {
             Login
           </button>
         )}
+        <ul className="nav-menu">
+          <li className="nav-item">
+            <NavLink exact to="/">
+              Home
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to="/add">Quiz Creator</NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to="/quiz">Explore</NavLink>
+          </li>
+        </ul>
         {user && (
           <>
             <div className="user-info">

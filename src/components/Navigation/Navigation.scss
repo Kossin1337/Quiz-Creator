@@ -64,5 +64,18 @@
     .log-out-btn:hover {
       background-color: #911712;
     }
+
+    .nav-menu {
+      display: flex;
+      list-style-type: none;
+
+      .nav-item {
+        padding: 0 0.75rem;
+      }
+
+      .active {
+        text-decoration: underline;
+      }
+    }
   }
 }
